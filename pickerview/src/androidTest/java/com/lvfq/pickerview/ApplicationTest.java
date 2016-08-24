@@ -1,4 +1,4 @@
-package com.bigkoo.pickerview;
+package com.lvfq.pickerview;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
