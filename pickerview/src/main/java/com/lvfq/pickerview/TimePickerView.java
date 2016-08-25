@@ -18,8 +18,8 @@ import java.util.Date;
  */
 public class TimePickerView extends BasePickerView implements View.OnClickListener {
     public enum Type {
-        ALL, YEAR_MONTH_DAY, HOURS_MINS, MONTH_DAY_HOUR_MIN , YEAR_MONTH
-    }// 四种选择模式，年月日时分，年月日，时分，月日时分
+        ALL, YEAR_MONTH_DAY , YEAR_MONTH_DAY_HOUR , HOURS_MINS, MONTH_DAY_HOUR_MIN , YEAR_MONTH
+    }// 选择模式，年月日时分，年月日，年月日时 , 时分，月日时分 ,年月
 
     WheelTime wheelTime;
     private View btnSubmit, btnCancel;

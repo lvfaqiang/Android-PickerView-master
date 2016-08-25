@@ -1,4 +1,4 @@
-package com.bigkoo.pickerviewdemo;
+package com.bigkoo.pickerviewdemo.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
 
+import com.bigkoo.pickerviewdemo.R;
 import com.lvfq.pickerview.OptionsPickerView;
 import com.lvfq.pickerview.TimePickerView;
 import com.bigkoo.pickerviewdemo.bean.ProvinceBean;
