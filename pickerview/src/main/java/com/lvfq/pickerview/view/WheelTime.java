@@ -165,7 +165,7 @@ public class WheelTime {
         wv_month.setOnItemSelectedListener(wheelListener_month);
 
         // 根据屏幕密度来指定选择器字体的大小(不同屏幕可能不同)
-        int textSize = 5;
+        int textSize = 4;
         switch (type) {
             case ALL:
                 textSize = textSize * 3;

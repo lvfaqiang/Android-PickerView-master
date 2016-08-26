@@ -7,6 +7,7 @@
               android:paddingRight="20dp">
 
     <Button
+        android:id="@+id/btn_ymdhm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -14,24 +15,35 @@
         />
 
     <Button
+        android:id="@+id/btn_ymdh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="yyyy-MM-dd HH"/>
 
     <Button
+        android:id="@+id/btn_ymd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="yyyy-MM-dd"/>
 
     <Button
+        android:id="@+id/btn_mdhm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="MM-dd HH:mm"/>
+
+    <Button
+        android:id="@+id/btn_hm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="HH:mm"/>
 
     <Button
+        android:id="@+id/btn_ym"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

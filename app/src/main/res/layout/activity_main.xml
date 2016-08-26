@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
     <TextView
-        android:layout_margin="50dp"
         android:id="@+id/tvTime"
-        android:text="时间"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:layout_margin="50dp"
+        android:text="时间"/>
+
     <TextView
         android:id="@+id/tvOptions"
-        android:layout_margin="50dp"
-        android:layout_below="@+id/tvTime"
-        android:text="条件"
         android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+        android:layout_height="50dp"
+        android:layout_below="@+id/tvTime"
+        android:layout_margin="50dp"
+        android:text="条件"/>
+
+    <TextView
+        android:id="@+id/tv_single_option"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tvOptions"
+        android:layout_margin="50dp"
+        android:layout_marginTop="50dp"
+        android:text="单选项"
+        />
 
     <View
         android:id="@+id/vMasker"
-        android:visibility="gone"
-        android:background="#e0000000"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"/>
+        android:layout_height="fill_parent"
+        android:background="#e0000000"
+        android:visibility="gone"/>
 
 </RelativeLayout>
