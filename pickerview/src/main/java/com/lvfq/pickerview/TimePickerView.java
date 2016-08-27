@@ -115,6 +115,14 @@ public class TimePickerView extends BasePickerView implements View.OnClickListen
         wheelTime.setCyclic(cyclic);
     }
 
+    /**
+     * 设置文字大小
+     * @param textSize
+     */
+    public void setTextSize(float textSize){
+        wheelTime.setTextSize(textSize);
+    }
+
     @Override
     public void onClick(View v) {
         String tag = (String) v.getTag();

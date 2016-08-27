@@ -60,6 +60,7 @@ public class Util {
                 callBack.onTimeSelect(sdf.format(date));
             }
         });
+        pvTime.setTextSize(16);
         //弹出时间选择器
         pvTime.show();
     }

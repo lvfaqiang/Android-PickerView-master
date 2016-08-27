@@ -5,14 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bigkoo.pickerviewdemo.DataModel;
 import com.bigkoo.pickerviewdemo.R;
+import com.bigkoo.pickerviewdemo.Util;
 import com.bigkoo.pickerviewdemo.bean.ProvinceBean;
 import com.lvfq.pickerview.OptionsPickerView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 public class MainActivity extends Activity {
@@ -20,19 +21,26 @@ public class MainActivity extends Activity {
     private ArrayList<ProvinceBean> options1Items = new ArrayList<ProvinceBean>();
     private ArrayList<ArrayList<String>> options2Items = new ArrayList<ArrayList<String>>();
     private ArrayList<ArrayList<ArrayList<String>>> options3Items = new ArrayList<ArrayList<ArrayList<String>>>();
+
+    private ArrayList<String> mList = new ArrayList<String>();
     private TextView tvTime, tvOptions;
+    private TextView tv_single_option;
 
     OptionsPickerView pvOptions;
     View vMasker;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         vMasker = findViewById(R.id.vMasker);
         tvTime = (TextView) findViewById(R.id.tvTime);
         tvOptions = (TextView) findViewById(R.id.tvOptions);
+        tv_single_option = (TextView) findViewById(R.id.tv_single_option);
 
+        // 时间选择
         tvTime.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -42,90 +50,32 @@ public class MainActivity extends Activity {
             }
         });
 
+        // 单项选择
+        for (int i = 0; i <= 10; i++) {
+            mList.add("模拟数据" + i);
+        }
+
+        tv_single_option.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Util.alertBottomWheelOption(MainActivity.this, mList, new Util.OnWheelViewClick() {
+                    @Override
+                    public void onClick(View view, int postion) {
+                        Toast.makeText(MainActivity.this, mList.get(postion), Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
+
+
+        showOptions();
+    }
+
+    private void showOptions(){
         //选项选择器
         pvOptions = new OptionsPickerView(this);
-
-        //选项1
-        options1Items.add(new ProvinceBean(0, "广东", "广东省，以岭南东道、广南东路得名", "其他数据"));
-        options1Items.add(new ProvinceBean(1, "湖南", "湖南省地处中国中部、长江中游，因大部分区域处于洞庭湖以南而得名湖南", "芒果TV"));
-        options1Items.add(new ProvinceBean(3, "广西", "嗯～～", ""));
-
-        //选项2
-        ArrayList<String> options2Items_01 = new ArrayList<String>();
-        options2Items_01.add("广州");
-        options2Items_01.add("佛山");
-        options2Items_01.add("东莞");
-        options2Items_01.add("阳江");
-        options2Items_01.add("珠海");
-        ArrayList<String> options2Items_02 = new ArrayList<String>();
-        options2Items_02.add("长沙");
-        options2Items_02.add("岳阳");
-        ArrayList<String> options2Items_03 = new ArrayList<String>();
-        options2Items_03.add("桂林");
-        options2Items.add(options2Items_01);
-        options2Items.add(options2Items_02);
-        options2Items.add(options2Items_03);
-
-        //选项3
-        ArrayList<ArrayList<String>> options3Items_01 = new ArrayList<ArrayList<String>>();
-        ArrayList<ArrayList<String>> options3Items_02 = new ArrayList<ArrayList<String>>();
-        ArrayList<ArrayList<String>> options3Items_03 = new ArrayList<ArrayList<String>>();
-        ArrayList<String> options3Items_01_01 = new ArrayList<String>();
-        options3Items_01_01.add("白云");
-        options3Items_01_01.add("天河");
-        options3Items_01_01.add("海珠");
-        options3Items_01_01.add("越秀");
-        options3Items_01.add(options3Items_01_01);
-        ArrayList<String> options3Items_01_02 = new ArrayList<String>();
-        options3Items_01_02.add("南海");
-        options3Items_01_02.add("高明");
-        options3Items_01_02.add("顺德");
-        options3Items_01_02.add("禅城");
-        options3Items_01.add(options3Items_01_02);
-        ArrayList<String> options3Items_01_03 = new ArrayList<String>();
-        options3Items_01_03.add("其他");
-        options3Items_01_03.add("常平");
-        options3Items_01_03.add("虎门");
-        options3Items_01.add(options3Items_01_03);
-        ArrayList<String> options3Items_01_04 = new ArrayList<String>();
-        options3Items_01_04.add("其他1");
-        options3Items_01_04.add("其他2");
-        options3Items_01_04.add("其他3");
-        options3Items_01.add(options3Items_01_04);
-        ArrayList<String> options3Items_01_05 = new ArrayList<String>();
-        options3Items_01_05.add("其他1");
-        options3Items_01_05.add("其他2");
-        options3Items_01_05.add("其他3");
-        options3Items_01.add(options3Items_01_05);
-
-        ArrayList<String> options3Items_02_01 = new ArrayList<String>();
-        options3Items_02_01.add("长沙长沙长沙长沙长沙长沙长沙长沙长沙1111111111");
-        options3Items_02_01.add("长沙2");
-        options3Items_02_01.add("长沙3");
-        options3Items_02_01.add("长沙4");
-        options3Items_02_01.add("长沙5");
-        options3Items_02_01.add("长沙6");
-        options3Items_02_01.add("长沙7");
-        options3Items_02_01.add("长沙8");
-        options3Items_02.add(options3Items_02_01);
-        ArrayList<String> options3Items_02_02 = new ArrayList<String>();
-        options3Items_02_02.add("岳1");
-        options3Items_02_02.add("岳2");
-        options3Items_02_02.add("岳3");
-        options3Items_02_02.add("岳4");
-        options3Items_02_02.add("岳5");
-        options3Items_02_02.add("岳6");
-        options3Items_02_02.add("岳7");
-        options3Items_02_02.add("岳8");
-        options3Items_02_02.add("岳9");
-        options3Items_02.add(options3Items_02_02);
-        ArrayList<String> options3Items_03_01 = new ArrayList<String>();
-        options3Items_03_01.add("好山水");
-        options3Items_03.add(options3Items_03_01);
-
-        options3Items.add(options3Items_01);
-        options3Items.add(options3Items_02);
-        options3Items.add(options3Items_03);
+        // 初始化三个列表数据
+        DataModel.initData(options1Items, options2Items, options3Items);
 
         //三级联动效果
         pvOptions.setPicker(options1Items, options2Items, options3Items, true);
@@ -136,6 +86,7 @@ public class MainActivity extends Activity {
         //设置默认选中的三级项目
         //监听确定选择按钮
         pvOptions.setSelectOptions(1, 1, 1);
+        pvOptions.setTextSize(18);
         pvOptions.setOnoptionsSelectListener(new OptionsPickerView.OnOptionsSelectListener() {
 
             @Override
@@ -156,11 +107,6 @@ public class MainActivity extends Activity {
                 pvOptions.show();
             }
         });
-    }
-
-    public static String getTime(Date date) {
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-        return format.format(date);
     }
 
 }

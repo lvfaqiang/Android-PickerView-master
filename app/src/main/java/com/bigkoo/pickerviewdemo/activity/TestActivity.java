@@ -3,15 +3,12 @@ package com.bigkoo.pickerviewdemo.activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
 import com.bigkoo.pickerviewdemo.R;
 import com.bigkoo.pickerviewdemo.Util;
 import com.lvfq.pickerview.TimePickerView;
-
-import java.util.ArrayList;
 
 /**
  * --------------------------------------------
@@ -66,25 +63,12 @@ public class TestActivity extends FragmentActivity implements View.OnClickListen
                 format = "yyyy-MM";
                 break;
         }
-        if (TextUtils.isEmpty(format) && null == type) {
-            final ArrayList<String> mList = new ArrayList<String>();
-            for (int i = 1; i <= 20; i++) {
-                mList.add("Test Option : " + i);
+        Util.alertTimerPicker(this, type, format, new Util.TimerPickerCallBack() {
+            @Override
+            public void onTimeSelect(String date) {
+                Toast.makeText(TestActivity.this, date, Toast.LENGTH_SHORT).show();
             }
-            Util.alertBottomWheelOption(this, mList, new Util.OnWheelViewClick() {
-                @Override
-                public void onClick(View view, int postion) {
-                    Toast.makeText(TestActivity.this, mList.get(postion), Toast.LENGTH_SHORT).show();
-                }
-            });
-        } else {
-            Util.alertTimerPicker(this, type, format, new Util.TimerPickerCallBack() {
-                @Override
-                public void onTimeSelect(String date) {
-                    Toast.makeText(TestActivity.this, date, Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
+        });
 
     }
 }
