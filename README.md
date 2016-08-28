@@ -1,14 +1,15 @@
 源码来自于：https://github.com/saiwu-bigkoo/Android-PickerView
 
 站着巨人的肩膀上，做了一些调整 ， 调整后效果图
-![image]https://github.com/lvfaqiang/Android-PickerView-master/blob/develop/preview/update_picker_demo.gif
+
+![image](https://github.com/lvfaqiang/Android-PickerView-master/blob/develop/preview/update_picker_demo.gif)
 
 博客地址：http://blog.csdn.net/lv_fq/article/details/52338513
 
 Demo 下载之后把 pickerview 作为 Module 引入到项目中,
 
 添加工具类：
-
+```
 public class Util {
 
     /**
@@ -23,7 +24,7 @@ public class Util {
      *
      * @param context
      * @param type     TimerPickerView 中定义的 选择时间类型
-     * @param format   回调的结果时间格式
+     * @param format   时间格式化
      * @param callBack 时间选择回调
      */
     public static void alertTimerPicker(Context context, TimePickerView.Type type, final String format, final TimerPickerCallBack callBack) {
@@ -110,5 +111,5 @@ public class Util {
         popupWindow.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
         popupWindow.showAtLocation(((ViewGroup) ((Activity) context).findViewById(android.R.id.content)).getChildAt(0), Gravity.CENTER, 0, 0);
     }
-
+```
 具体调用方法请参考 Demo。
