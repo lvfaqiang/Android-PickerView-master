@@ -1,8 +1,7 @@
 源码来自于：https://github.com/saiwu-bigkoo/Android-PickerView
 
 站着巨人的肩膀上，做了一些调整 ， 调整后效果图
-
- ![image]https://github.com/lvfaqiang/Android-PickerView-master/blob/master/preview/update_picker_demo.gif
+![image]https://github.com/lvfaqiang/Android-PickerView-master/blob/develop/preview/update_picker_demo.gif
 
 博客地址：http://blog.csdn.net/lv_fq/article/details/52338513
 
