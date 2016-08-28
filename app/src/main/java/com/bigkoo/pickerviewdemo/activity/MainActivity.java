@@ -11,6 +11,7 @@ import com.bigkoo.pickerviewdemo.DataModel;
 import com.bigkoo.pickerviewdemo.R;
 import com.bigkoo.pickerviewdemo.Util;
 import com.bigkoo.pickerviewdemo.bean.ProvinceBean;
+import com.bigkoo.pickerviewdemo.bean.TypeBean;
 import com.lvfq.pickerview.OptionsPickerView;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class MainActivity extends Activity {
     private ArrayList<ArrayList<String>> options2Items = new ArrayList<ArrayList<String>>();
     private ArrayList<ArrayList<ArrayList<String>>> options3Items = new ArrayList<ArrayList<ArrayList<String>>>();
 
-    private ArrayList<String> mList = new ArrayList<String>();
+    private ArrayList<TypeBean> mList = new ArrayList<TypeBean>();
     private TextView tvTime, tvOptions;
     private TextView tv_single_option;
 
@@ -52,7 +53,7 @@ public class MainActivity extends Activity {
 
         // 单项选择
         for (int i = 0; i <= 10; i++) {
-            mList.add("模拟数据" + i);
+            mList.add(new TypeBean(i, "item" + i));
         }
 
         tv_single_option.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +62,7 @@ public class MainActivity extends Activity {
                 Util.alertBottomWheelOption(MainActivity.this, mList, new Util.OnWheelViewClick() {
                     @Override
                     public void onClick(View view, int postion) {
-                        Toast.makeText(MainActivity.this, mList.get(postion), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, mList.get(postion).getName(), Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -71,7 +72,7 @@ public class MainActivity extends Activity {
         showOptions();
     }
 
-    private void showOptions(){
+    private void showOptions() {
         //选项选择器
         pvOptions = new OptionsPickerView(this);
         // 初始化三个列表数据

@@ -3,19 +3,17 @@ package com.bigkoo.pickerviewdemo.bean;
 /**
  * --------------------------------------------
  * Create By :  Lvfq
- * Date ： 2016/8/15 0015 下午 4:53
+ * Date ： 2016/8/28 0028 下午 3:55
  * -------------------------------------------
  **/
-public class TestBean {
+public class TypeBean {
 
     private int id;
     private String name;
-    private String type;
 
-    public TestBean(int id, String name, String type) {
+    public TypeBean(int id, String name) {
         this.id = id;
         this.name = name;
-        this.type = type;
     }
 
     public int getId() {
@@ -32,14 +30,6 @@ public class TestBean {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     //这个用来显示在PickerView上面的字符串,PickerView会通过反射获取getPickerViewText方法显示出来。
