@@ -113,3 +113,6 @@ public class Util {
     }
 ```
 具体调用方法请参考 Demo。
+
+此外，后面把该项目中的 底部弹出效果做了一下整理，详情参考 http://blog.csdn.net/lv_fq/article/details/53154026
+
